@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | HRMS{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="mb-4">HRMS Dashboard</h1>
+    <p class="lead">
+        Employee management, attendance tracking, and reporting — all in one place.
+    </p>
+
+    <div class="row mt-5">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Employees</h5>
+                    <p class="card-text">View and manage employees.</p>
+                    <a href="/employees/" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Attendance</h5>
+                    <p class="card-text">Mark daily attendance.</p>
+                    <a href="/attendance/mark/" class="btn btn-primary">Mark</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Reports</h5>
+                    <p class="card-text">Department-wise insights.</p>
+                    <a href="/reports/departments/" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Detail | HRMS{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">{{ employee.name }}</h2>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Department:</strong> {{ employee.department }}</p>
+        <p><strong>Designation:</strong> {{ employee.designation }}</p>
+        <p><strong>Date of Joining:</strong> {{ employee.date_of_joining }}</p>
+        <p><strong>Address:</strong> {{ employee.address }}</p>
+    </div>
+</div>
+
+<h4>Attendance</h4>
+
+<table class="table table-bordered">
+    <thead class="table-secondary">
+        <tr>
+            <th>Date</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for attendance in attendances %}
+        <tr>
+            <td>{{ attendance.date }}</td>
+            <td>{{ attendance.check_in_time }}</td>
+            <td>{{ attendance.check_out_time }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3" class="text-center text-muted">
+                No attendance records.
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

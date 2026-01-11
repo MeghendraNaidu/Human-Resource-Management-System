@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Mark Attendance | HRMS{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Mark Attendance</h2>
+
+<form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Employee</label>
+        <select name="employee" class="form-select" required>
+            {% for employee in employees %}
+            <option value="{{ employee.id }}">
+                {{ employee.name }} ({{ employee.department }})
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Check-in Time</label>
+        <input type="time" name="check_in_time" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Check-out Time</label>
+        <input type="time" name="check_out_time" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Mark Attendance
+    </button>
+</form>
+{% endblock %}
