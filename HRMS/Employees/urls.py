@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import (EmployeeListCreateAPIView, EmployeeDetailAPIView, AttendanceMarkAPIView, AttendanceListAPIView, DepartmentReportAPIView,        EmployeeListView, EmployeeDetailView, AttendanceMarkView, DepartmentReportView,)
+from .views import (EmployeeListCreateAPIView, EmployeeDetailAPIView, AttendanceMarkAPIView, AttendanceListAPIView, DepartmentReportAPIView, EmployeeListView, EmployeeDetailView, AttendanceMarkView, DepartmentReportView,)
 
 urlpatterns = [
     # =====================
@@ -21,11 +21,6 @@ urlpatterns = [
     # =====================
     # TEMPLATE ROUTES
     # =====================
-
-    # path("employees/", EmployeeListCreateAPIView.as_view(), name="employee_list_page",),
-    # path("employees/<int:pk>/", EmployeeDetailAPIView.as_view(), name="employee_detail_page",),
-    # path("attendance/mark/", AttendanceMarkAPIView.as_view(), name="attendance_mark_page",),
-    # path("reports/departments/", DepartmentReportAPIView.as_view(), name="department_report_page",),
     
     path("employees/", EmployeeListView.as_view(), name="employee_list"),
     path("employees/<int:pk>/", EmployeeDetailView.as_view(), name="employee_detail"),
